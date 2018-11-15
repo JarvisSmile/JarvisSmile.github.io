@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="Chinese">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/ICON.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/f16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="GitHub,Hexo,Personal Blog,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="导语 HEXO is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static fileswith a beautiful theme in seconds.  &amp;emsp;&amp;emsp;作为一个正在成长的小coder，">
+<meta name="keywords" content="GitHub,Hexo,Personal Blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building_github_personal_blog_based_on_HEXO">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/Building_github_personal_blog_based_on_HEXO/index.html">
+<meta property="og:site_name" content="Hi,I&#39;m here">
+<meta property="og:description" content="导语 HEXO is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static fileswith a beautiful theme in seconds.  &amp;emsp;&amp;emsp;作为一个正在成长的小coder，">
+<meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2018-11-15T13:09:17.850Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building_github_personal_blog_based_on_HEXO">
+<meta name="twitter:description" content="导语 HEXO is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static fileswith a beautiful theme in seconds.  &amp;emsp;&amp;emsp;作为一个正在成长的小coder，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/Building_github_personal_blog_based_on_HEXO/">
+
+
+
+
+
+  <title>Building_github_personal_blog_based_on_HEXO | Hi,I'm here</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f75c9fc55ce711d994ad937b3930c70a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="Chinese">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hi,I'm here</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Wlecome to my space</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/Building_github_personal_blog_based_on_HEXO/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jarvis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/JW.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi,I'm here">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Building_github_personal_blog_based_on_HEXO</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T01:30:00+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/28/Building_github_personal_blog_based_on_HEXO/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/28/Building_github_personal_blog_based_on_HEXO/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h3 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h3><blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="noopener">HEXO</a> is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static fileswith a beautiful theme in seconds.</p>
+</blockquote>
+<p>&emsp;&emsp;作为一个正在成长的小coder，总喜欢搞一些事情，比如想着搭建一个自己的博客，来记录一些小笔记。用自己的服务器没搭出来，就借用了github的服务器，使用了现在大家使用频率较高的<strong>hexo+github</strong>来创建博客,而且hexo用户量大，主题还很多,对于比较注意表面的人，可以说很友好了。</p>
+<hr>
+<p>&emsp;&emsp;这篇文章是基于 <strong>Windows系统</strong> 对搭建过程做一个小的记录,虽然我的电脑已经提前将环境搭好了，但还是从零开始记录吧！</p>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><strong>安装NodeJs</strong></li>
+<li><strong>安装Git</strong></li>
+<li><strong>安装Hexo</strong></li>
+<li><strong>链接GitHub</strong></li>
+<li><strong>生成SSH并添加到GitHub</strong></li>
+<li><strong>部署项目</strong></li>
+<li><strong>本地测试</strong></li>
+<li><strong>上传到GitHub</strong></li>
+<li><strong>绑定个人域名</strong></li>
+<li><strong>修改及配置主题</strong></li>
+<li><strong>添加文章</strong></li>
+<li><strong>总结</strong></li>
+</ul>
+<hr>
+<h2 id="Ready-Go！"><a href="#Ready-Go！" class="headerlink" title="Ready~Go！"></a>Ready~Go！</h2><p><br></p>
+<h3 id="1-安装NodeJS"><a href="#1-安装NodeJS" class="headerlink" title="1.安装NodeJS"></a>1.安装NodeJS</h3><blockquote>
+<p>Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code server-side</p>
+</blockquote>
+<p>hexo是基于nodejs环境的静态博客，在接下来操作中，也会用到nodejs的npm安装。</p>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">点击进入NodeJS首页</a>（说明：LTS为长期支持版，Current为当前最新版）</p>
+<p><strong>安装步骤：</strong>  </p>
+<blockquote>
+<p>首先下载好msi文件后，双击打开安装，也是一路next，不过在Custom Setup这一步记得选 <code>Add to PATH</code> ,这样你就不用自己去配置电脑上环境变量了，装完在按 <code>win + r</code> 快捷键调出运行，然后输入cmd，点击确定，在cmd中输入path可以看到你的node是否配置在里面（环境变量），没有的话你就自由发挥吧。</p>
+</blockquote>
+<p><strong>查看node版本</strong></p>
+<p>&emsp;&emsp;在命令行输入：$<code>node -v</code></p>
+<h3 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h3><blockquote>
+<p>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</p>
+</blockquote>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">点击进入Git首页</a></p>
+<ul>
+<li><a href="https://github.com/git-for-windows/git/releases/download/v2.16.2.windows.1/Git-2.16.2-32-bit.exe" target="_blank" rel="noopener">点击下载32-bit Git for Windows Setup</a></li>
+<li><a href="https://github.com/git-for-windows/git/releases/download/v2.16.2.windows.1/Git-2.16.2-64-bit.exe" target="_blank" rel="noopener">点击下载64-bit Git for Windows Setup</a></li>
+</ul>
+<p><strong>安装步骤</strong></p>
+<blockquote>
+<p>双击下载好的.exe文件，一直点Next就好</p>
+</blockquote>
+<p><strong>查看Git版本</strong></p>
+<p>&emsp;&emsp;打开Git Bash，输入命令：$<code>git version</code></p>
+<h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><blockquote>
+<p>Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static files with a beautiful theme in seconds.</p>
+</blockquote>
+<p>&emsp;<strong>安装步骤</strong></p>
+<ul>
+<li>&emsp;先创建一个文件夹（用来存放所有blog的东西），然后<code>cd</code>到该文件夹下.  </li>
+<li>&emsp;安装hexo命令：$<code>npm i -g hexo</code></li>
+<li>&emsp;安装完成后，查看版本 :$<code>hexo -v</code></li>
+<li>&emsp;初始化命令：$<code>hexo init</code>  </li>
+<li><p>&emsp;初始化完成之    后打开所在的文件夹可以看到一些文件</p>
+<p>  <strong>&emsp;这里要解释一下:</strong></p>
+<ul>
+<li>&emsp; node_modules：是依赖包<ul>
+<li>&emsp; public：存放的是生成的页面</li>
+<li>&emsp; scaffolds：命令生成文章等的模板</li>
+<li>&emsp; source：用命令创建的各种文章</li>
+<li>&emsp; themes：主题</li>
+<li>&emsp; _config.yml：整个博客的配置</li>
+<li>&emsp; db.json：source解析所得到的</li>
+<li>&emsp; package.json：项目所需模块项目的配置信息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="前置工作就此告一段落，接下来开始具体配置"><a href="#前置工作就此告一段落，接下来开始具体配置" class="headerlink" title="前置工作就此告一段落，接下来开始具体配置"></a>前置工作就此告一段落，接下来开始具体配置</h4><hr>
+<h3 id="4-链接GitHub"><a href="#4-链接GitHub" class="headerlink" title="4.链接GitHub"></a>4.链接GitHub</h3><blockquote>
+<p>GitHub 是一个面向开源及私有 软件项目的托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。</p>
+</blockquote>
+<ul>
+<li><p>首先，你得有一个GitHub的账号————<em>如果你没有，赶紧创一个啊！</em></p>
+</li>
+<li><p>然后，你要创建一个新的repo，名称为<code><em>YourGitHubName</em>.github.io</code><strong>必须按照这个格式创建才有用</strong></p>
+</li>
+<li><p>最后，回到Git Bash里面配置GitHub账户信息,如下（YourName和YourEmail都替换成你自己的）：</p>
+<blockquote>
+<p>$<code> git config –global user.name “YourName”</code><br>$<code> git config –global user.email “YourEmail”</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="5-创建SSH并添加到GitHub中"><a href="#5-创建SSH并添加到GitHub中" class="headerlink" title="5.创建SSH并添加到GitHub中"></a>5.创建SSH并添加到GitHub中</h3><h4 id="（1）创建SSH"><a href="#（1）创建SSH" class="headerlink" title="（1）创建SSH"></a>（1）创建SSH</h4><ul>
+<li>·在Git Bash中输入：$<code>ssh-keygen -t rsa -C “<a href="mailto:YourEmail@example.com" target="_blank" rel="noopener">YourEmail@example.com</a>“</code>,生成ssh</li>
+<li>·在Git Bash中输入: $<code>cd ~/.ssh</code></li>
+<li>·在Git Bash中输入：$<code>cat id_ras.pub</code></li>
+<li>·你会在Git Bash中看到：<br><code>ssh-ras<em>这会有一段字符</em><a href="mailto:YourEmail@example.com" target="_blank" rel="noopener">YourEmail@example.com</a></code>这个样子的字符</li>
+</ul>
+<h4 id="（2）添加到GitHub"><a href="#（2）添加到GitHub" class="headerlink" title="（2）添加到GitHub"></a>（2）添加到GitHub</h4><ul>
+<li>·将上面获取到的SSH(ssh-ras和那一段字符，邮箱不要)到GitHub中————添加一个<code>New SSH key</code> ，title随便取，key就填刚刚那一段。</li>
+<li>·在Git Bash中验证是否添加成功:$<code>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></code></li>
+</ul>
+<h3 id="6-部署项目"><a href="#6-部署项目" class="headerlink" title="6.部署项目"></a>6.部署项目</h3><ul>
+<li>打开blog所在文件夹，修改<code>_config.yml</code>文件的一些配置,(冒号之后都是有一个半角空格的)：<blockquote>
+<p>deploy:<br>  &emsp;type: git<br>  &emsp;repo:<a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourgithubName/YourgithubName.github.io.git</a> <em>如果出现无法连接，可以修改为ssh:<a href="mailto://git@github.com" target="_blank" rel="noopener">//git@github.com</a>/YourgithubName/YourgithubName.github.io</em><br>  &emsp;branch: master</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="7-本地测试"><a href="#7-本地测试" class="headerlink" title="7.本地测试"></a>7.本地测试</h3><ul>
+<li><p>打开Git Bash 进入到blog目录，分别执行以下命令：</p>
+<ul>
+<li>$<code>hexo init</code></li>
+<li>$<code>hexo generate</code></li>
+<li>$<code>hexo server</code></li>
+<li>_注：hexo 3.0把服务器独立成个别模块，需要单独安装：$<code>npm i hexo-server</code>。</li>
+</ul>
+</li>
+<li>打开浏览器，在地址栏输入：<code><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></code>，你就会看到Hexo默认界面了 </li>
+</ul>
+<h3 id="8-上传到GitHub"><a href="#8-上传到GitHub" class="headerlink" title="8.上传到GitHub"></a>8.上传到GitHub</h3><ul>
+<li>首先，安装一个小玩意，在Git Bash中输入：$<code>npm install hexo-deployer-git –save</code>(只有用它才能将文章部署到GitHub服务器，并且能被别人访问到)</li>
+<li>接下来在Git Bash输入命令(建议每次都按以下三步进行)：<ul>
+<li>$<code>hexo clean</code></li>
+<li>$<code>hexo generate</code></li>
+<li>$<code>hexo deploy</code></li>
+<li><em>注：deploy过程中可能需要输入你的UserName和PassWord</em></li>
+</ul>
+</li>
+<li>部署成功后，稍等一会，在自己浏览器输入<code>http://<em>YourGitHubName</em>.github.io</code>就可以看到你的个人博客啦!</li>
+</ul>
+<hr>
+<p><strong>基本操作已经完成，接下来都是附加操作~</strong></p>
+<hr>
+<h3 id="9-绑定个人域名"><a href="#9-绑定个人域名" class="headerlink" title="9.绑定个人域名"></a>9.绑定个人域名</h3><blockquote>
+<p>有自己的博客，怎么能不配备一个自己喜欢的域名呢。</p>
+</blockquote>
+<ul>
+<li><p>首先，需要购买一个域名，比如我在阿里云购买的<a href="//www.jarvissmile.top">jarvissmile.top</a>,DNS也是顺便在阿里云购买的，个人也比较支持阿里云！</p>
+</li>
+<li><p>然后，在DNS解析中，增加一条记录</p>
+<blockquote>
+<p>记录类型为 <strong>A</strong><br>主机记录为<strong>www</strong>或者<strong> @ </strong><br>记录值为你GitHub的ip<br><em>注：关于GitHub的IP地址，你可以打开CMD，输入：$<code>ping <strong>YourGitHubName</strong>.github.io</code></em></p>
+</blockquote>
+</li>
+<li><p>接下来，添加CNAME，在项目的source文件夹下面创建一个CNAME的文件，在里面添加自己的域名，比如<a href="//www.jarvissmile.top">jarvissmile.top</a><em>注：只能添加一个</em></p>
+</li>
+<li><p>再次部署，重复步骤8，然后在浏览器输入你的域名，就可以看到你的博客了~</p>
+</li>
+</ul>
+<h3 id="10-修改及配置主题"><a href="#10-修改及配置主题" class="headerlink" title="10.修改及配置主题"></a>10.修改及配置主题</h3><p>&emsp;Hexo初始化之后默认的主题是<code>landscape</code> , 然后你可以去<a href="href=&quot;https://hexo.io/themes/&quot;">Hexo.io</a>里面找到你想要的主题。在github中搜索你要的主题名称，里面都会有该主题的如何使用的介绍，按着来就好了，反正就是改改改！我选的是<code><a href="href=&quot;https://github.com/Haojen/hexo-theme-Claudia&quot;">Claudia</a></code>,看起来挺不错，至少是我喜欢的类型。<br>&emsp;跟主题相关的配置在<code>themes/Claudia/_config.yml</code>里面，每一个主题，应该都有<code>Readme.md</code>文档,可以参考，并对主题进行修改！</p>
+<h3 id="11-添加文章"><a href="#11-添加文章" class="headerlink" title="11.添加文章"></a>11.添加文章</h3><ul>
+<li><p>新建文章：$<code>hexo new ‘文章名’</code>，然后你就可以在<code>source/_posts</code>路径下看到你创建的文章啦，编辑完成之后按照前面说的方式部署，在浏览器刷新就能看到你的文章了。</p>
+</li>
+<li><p>关于具体的文章编辑你可以看下<a href="&quot;https://hexo.io/zh-cn/docs/writing.html&quot;">官网介绍</a></p>
+</li>
+<li>至于markdown，可以自行发挥啦~，推荐语法学习博客:<a href="https://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="noopener">Markdown——入门指南</a></li>
+</ul>
+<hr>
+<p><strong>附加操作也就到此结束</strong></p>
+<hr>
+<h3 id="12-总结"><a href="#12-总结" class="headerlink" title="12.总结"></a>12.总结</h3><ul>
+<li>也没啥想说的，就是觉得结尾很突兀，就加点东西</li>
+<li>不管怎么做，都要一步一步来，慢慢就会学会</li>
+<li>markdown，真的好用</li>
+</ul>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/Personal-Blog/" rel="tag"># Personal Blog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/01/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/29/File_Transfer_between_Local_and_GitHub_based_on_GitBash/" rel="prev" title="File_Transfer_between_Local_and_GitHub_based_on_GitBash">
+                File_Transfer_between_Local_and_GitHub_based_on_GitBash <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bc78c67e8aa48bd" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/JW.jpg" alt="Jarvis">
+            
+              <p class="site-author-name" itemprop="name">Jarvis</p>
+              <p class="site-description motion-element" itemprop="description">Jarvis's Personal Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="//www.jarvissmile.top" target="_blank" title="HomePage">
+                      
+                        <i class="fa fa-fw fa-globe"></i>HomePage</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://cn.bing.com/maps?q=江苏省南京市栖霞区文苑路9号" target="_blank" title="NanJin">
+                      
+                        <i class="fa fa-fw fa-map-marker"></i>NanJin</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Phone_Pic.png" target="_blank" title="Tel">
+                      
+                        <i class="fa fa-fw fa-phone"></i>Tel</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.njupt.edu.cn/" target="_blank" title="NJUPT">
+                      
+                        <i class="fa fa-fw fa-mortar-board"></i>NJUPT</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Jarvis_Smile@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-paper-plane-o"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/759752114" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/WeChat_QR.png" target="_blank" title="WeChat">
+                      
+                        <i class="fa fa-fw fa-weixin"></i>WeChat</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/JarvisSmile" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/JarvisSmile/activities" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-quora"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/JarvisSmile" target="_blank" title="WeiBo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导语"><span class="nav-number">1.</span> <span class="nav-text">导语</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number"></span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ready-Go！"><span class="nav-number"></span> <span class="nav-text">Ready~Go！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装NodeJS"><span class="nav-number">1.</span> <span class="nav-text">1.安装NodeJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装Git"><span class="nav-number">2.</span> <span class="nav-text">2.安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">3.安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前置工作就此告一段落，接下来开始具体配置"><span class="nav-number">3.1.</span> <span class="nav-text">前置工作就此告一段落，接下来开始具体配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-链接GitHub"><span class="nav-number">4.</span> <span class="nav-text">4.链接GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-创建SSH并添加到GitHub中"><span class="nav-number">5.</span> <span class="nav-text">5.创建SSH并添加到GitHub中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）创建SSH"><span class="nav-number">5.1.</span> <span class="nav-text">（1）创建SSH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）添加到GitHub"><span class="nav-number">5.2.</span> <span class="nav-text">（2）添加到GitHub</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-部署项目"><span class="nav-number">6.</span> <span class="nav-text">6.部署项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-本地测试"><span class="nav-number">7.</span> <span class="nav-text">7.本地测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-上传到GitHub"><span class="nav-number">8.</span> <span class="nav-text">8.上传到GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-绑定个人域名"><span class="nav-number">9.</span> <span class="nav-text">9.绑定个人域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-修改及配置主题"><span class="nav-number">10.</span> <span class="nav-text">10.修改及配置主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-添加文章"><span class="nav-number">11.</span> <span class="nav-text">11.添加文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-总结"><span class="nav-number">12.</span> <span class="nav-text">12.总结</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jarvis</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100025, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100025, xid: "2018/03/28/Building_github_personal_blog_based_on_HEXO/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100025/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Jarvis,Hexo,NexT">
+  <meta name="keywords" content="Android,SQLite,">
 
 
 
@@ -79,17 +79,23 @@
 
 
 
-<meta name="description" content="Jarvis&apos;s Personal Blog">
-<meta name="keywords" content="Jarvis&#39;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hi,I&#39;m here">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Android：SQLiteOpenHelper类 SQLite数据库基本操作  导语作为一个刚接触Android的新人，最近几天可谓是头大，在涉及到数据库操作时候，可谓摔尽了跟头，好在，现在可以进行数据库的基本操作(增、删、改、查)了，所以，赶紧写下来，让自己记忆深刻一点  目录 数据库介绍  SQLiteOpenHelper类介绍  数据库基本操作  数据库创建 数据库关闭 数据库更新 数据库">
+<meta name="keywords" content="Android,SQLite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android:SQLite">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/Android-SQLite/index.html">
 <meta property="og:site_name" content="Hi,I&#39;m here">
-<meta property="og:description" content="Jarvis&apos;s Personal Blog">
+<meta property="og:description" content="Android：SQLiteOpenHelper类 SQLite数据库基本操作  导语作为一个刚接触Android的新人，最近几天可谓是头大，在涉及到数据库操作时候，可谓摔尽了跟头，好在，现在可以进行数据库的基本操作(增、删、改、查)了，所以，赶紧写下来，让自己记忆深刻一点  目录 数据库介绍  SQLiteOpenHelper类介绍  数据库基本操作  数据库创建 数据库关闭 数据库更新 数据库">
 <meta property="og:locale" content="Chinese">
+<meta property="og:image" content="http://yoursite.com/images/Android-SQLite/FunctionTB.png">
+<meta property="og:image" content="http://yoursite.com/images/Android-SQLite/1.png">
+<meta property="og:image" content="http://yoursite.com/images/Android-SQLite/2.png">
+<meta property="og:image" content="http://yoursite.com/images/Android-SQLite/3.png">
+<meta property="og:updated_time" content="2018-11-15T13:34:26.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hi,I&#39;m here">
-<meta name="twitter:description" content="Jarvis&apos;s Personal Blog">
+<meta name="twitter:title" content="Android:SQLite">
+<meta name="twitter:description" content="Android：SQLiteOpenHelper类 SQLite数据库基本操作  导语作为一个刚接触Android的新人，最近几天可谓是头大，在涉及到数据库操作时候，可谓摔尽了跟头，好在，现在可以进行数据库的基本操作(增、删、改、查)了，所以，赶紧写下来，让自己记忆深刻一点  目录 数据库介绍  SQLiteOpenHelper类介绍  数据库基本操作  数据库创建 数据库关闭 数据库更新 数据库">
+<meta name="twitter:image" content="http://yoursite.com/images/Android-SQLite/FunctionTB.png">
 
 
 
@@ -119,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/Android-SQLite/">
 
 
 
 
 
-  <title>Hi,I'm here</title>
+  <title>Android:SQLite | Hi,I'm here</title>
   
 
 
@@ -154,8 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -258,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -290,9 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/24/Android-SQLite/" itemprop="url">Android:SQLite</a></h1>
+          <h1 class="post-title" itemprop="name headline">Android:SQLite</h1>
         
 
         <div class="post-meta">
@@ -376,9 +379,7 @@
       
 
       
-        
-          
-            <h1 id="Android：SQLiteOpenHelper类"><a href="#Android：SQLiteOpenHelper类" class="headerlink" title="Android：SQLiteOpenHelper类"></a>Android：SQLiteOpenHelper类</h1><blockquote>
+        <h1 id="Android：SQLiteOpenHelper类"><a href="#Android：SQLiteOpenHelper类" class="headerlink" title="Android：SQLiteOpenHelper类"></a>Android：SQLiteOpenHelper类</h1><blockquote>
 <p><em>SQLite数据库基本操作</em></p>
 </blockquote>
 <h2 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h2><p>作为一个刚接触Android的新人，最近几天可谓是头大，在涉及到数据库操作时候，可谓摔尽了跟头，好在，现在可以进行数据库的基本操作(增、删、改、查)了，所以，赶紧写下来，让自己记忆深刻一点</p>
@@ -713,8 +714,6 @@ db.executeSQL(String sql, Object[] bindArgs);
 </ul>
 <hr>
 <h1 id="JARVIS-冲鸭！"><a href="#JARVIS-冲鸭！" class="headerlink" title="JARVIS 冲鸭！"></a>JARVIS 冲鸭！</h1>
-          
-        
       
     </div>
     
@@ -729,353 +728,38 @@ db.executeSQL(String sql, Object[] bindArgs);
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/a little uncomfortable/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/JW.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,I'm here">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/a little uncomfortable/" itemprop="url">a little uncomfortable</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-20T02:00:00+08:00">
-                2018-10-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Essay/" itemprop="url" rel="index">
-                    <span itemprop="name">Essay</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-
+            <a href="/tags/SQLite/" rel="tag"># SQLite</a>
           
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/20/a little uncomfortable/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/10/20/a little uncomfortable/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="生活总是这样，有些坎坷，有些失落，下面是你，一晚上，写的长文，写给我的"><a href="#生活总是这样，有些坎坷，有些失落，下面是你，一晚上，写的长文，写给我的" class="headerlink" title="生活总是这样，有些坎坷，有些失落，下面是你，一晚上，写的长文，写给我的"></a><strong>生活总是这样，有些坎坷，有些失落，下面是你，一晚上，写的长文，写给我的</strong></h1><p>&#8195;&#8195;<strong>我</strong>知道，当你看到我又发长文的时候，肯定又要吐槽我矫情了。有的时候，嘴巴说出来，表达的更直观，但是有的时候，有些话说不出来。大概只有打字的时候，才有机会把打出去的字更改。</p>
-<p>&#8195;&#8195;<strong>很</strong>长一段时间了，可能从高考前不久开始，我们之间的矛盾都围绕着我们和她，她就像一个魔咒一样禁锢着我们。似乎她不出现的时候，所有的一切都已经过去了，但是只要她一出现，我们之间的矛盾就像从来没有结束过一样。有时候想想，真的不明白，到底为了什么。</p>
-<p>&#8195;&#8195;<strong>我</strong>不知道怎么向你表达我有多爱你，我不知道怎么才能让你感受到我对你的信任，我从来不担心你会离开，从来不怀疑你对我的感觉。我并没有像电视剧里的女生一样，怀疑自己的男朋友和前任纠缠不清，但是我会和她们一样，一样不喜欢自己的男朋友和前任有任何的交流。我有的时候真的很不能理解你，我不明白你为什么不能区别对待一些人，这个区别对待并不是贬义的区别对待，因为不是所有人都能归类，有些身份注定了她就不能像你的一般朋友一样存在着。</p>
-<p>&#8195;&#8195;<strong>我</strong>要求不高，就前任一个特例而已，你对所有人好都无所谓，因为我和他们没什么交集，你也不会像对我一样对第二个人这样好，但是前任真的不一样，我在乎。像其他人眼中，分手后还能做朋友的两个人，他们是和平分手，没有谁怨谁，而且如果有现任，那也是现任不在乎才会这样。但是你和她是这样的吗？我们在不对的时间在一起了，是你错也好，是我错也罢，这就是事实，我完全可以接受你对她保留一丝愧疚，但是我不接受你用这一丝的愧疚去缓和你跟她的关系。我跟她第一次的对话确实充满了火药味，那个时候我就从头到尾讽刺她，但是没有说过一句谩骂她的话，我只是知道我理亏而已，但不代表我要听着她说的话无动于衷。你看到她对我说的话你会难受，但是你无法完全理解我的心情，你永远不会对她说出一句狠话，因为你做人的方式，也因为你的愧疚。我不要求你和她成为仇人，我只要你漠视她而已，你身边的人可以千千万万，是不是让你忽视一个已经不再应该有交集的人就这么难，你一定要严格守着你不成文的原则，甚至是对待前任?<strong>前任，就该活得像死人一样</strong>。</p>
-<p>&#8195;&#8195;<strong>没</strong>到高考之前我们明明都好好的，为什么你跟她结束了，我们却不能在完全没有她的环境里生活，她不会在现实中出现在我们面前不是吗？这么多次了，我以为我已经表达得够清楚了，我就是不能容忍你和她说话，但你就是做不到，我都要觉得我是不是那么强人所难了。还有什么可说的呢，哪怕有事也不过是琐事，根本没有什么值得深究的事情，为什么要说呢？我跟她水火不相容，我不觉得这就是我单方面认为的，我也不觉得她屑于和我有交集。明明已经弄得很难看了，为什么要因为做法欠妥重新联系呢？难道能改变什么吗？还是有什么需要改变的呢？没必要，你也知道说没必要，但是你做的从来就不是这样，你太习惯善始善终是吗？</p>
-<p>&#8195;&#8195;<strong>我</strong>不喜欢的人一次又一次地出现，我不喜欢的事你一次又一次地做，我一次又一次的难过，一次又一次地感到心寒，我觉得我怎么也改变不了你，哪怕只是一点点，哪怕只是针对一个人。为什么一定要这样呢？你那么爱的我都不能让你有丝毫的让步吗？只要你跟她一说话我就会很生气，我就会很难过，但是无论我流多少眼泪，都换不来你一点点的改变，就算你承诺了你也做不到。难道你不累吗？你对她有愧疚，那对我呢？我一次又一次因为这种事生气伤心就完全是我活该是吗？我每次看到你对我无可奈何的样子，就像是我完完全全的错了而不自知，让你不知道怎么让我走出自我一样，那种感觉就像是我在消耗你对我的耐性。你一定要在她出现的时候表现出你的无害吗？哪怕你不是带着目的性，但你就是给她一种你没有任何恶意，反而愧对于她的感觉。除了让她不那么讨厌你，让她觉得我没脸没皮还蛮不讲理以外，有什么意义？</p>
-<p>&#8195;&#8195;<strong>我</strong>每次都相信你，但是我每次都很失望，我只觉得眼泪很廉价，我也很廉价，一有事就会哭，一哄就会好，难道要等到你再也哄不好我了，你送我的东西我再也不要了，你才知道我的失望有多深吗？你也许总是觉得我在闹腾，丝毫没有理智，就是一味自私地行事，你也许觉得我从来就不理解你，一直把我当成一个不懂事的小孩子一样，把我的感受放在一边，先按自己觉得对的方式把事情做了再说。我不需要你做多好的人，我不觉得你需要在所有人眼中没有一点瑕疵，我不认为你无视一个人要鼓起多大的勇气，只是你太看重你的原则，但是明明你就有私心，为什么要说的那么官方呢？规矩得像墙上的规范，没有任何余地。说是结束了就什么都没有了，是，是没有后续了，但是你那点愧疚促成了多少事我想你都不知道，这就是你的理智、就是你的原则、就是你所谓的公正吗？承认自己有私心就那么难吗？坦诚告诉我就那么难吗？你不告诉我的，我也许不会发现，但是如果发现了，我只会比你坦白告知更生气。从QQ到短信，不就是怕我看到吗？短信留着就是不怕我发现吗？那怎么不直接用QQ？你怎么想的，你该清楚。你都觉得和我谈恋爱累了，为什么不告诉我应该怎么做才让你不那么累，我是爱你，但我终究不是你，我不会完全洞察你的内心，也不会做着和你一样的人不是吗？</p>
-<p>&#8195;&#8195;<strong>这</strong>一次，说实话，我没有抱着一丝丝的希望你能改变，反正你也不是第一次说你不会再和她说话了。可能你觉得主动联系和回复消息不一样，确实有不一样，但是结果就是我都会生气，那个时候过程不重要了。在我因为你，最不讲道理的时候，也是我最爱你的时候，但是你大概只看到了我的不讲理。你知道吗？从你跟她这一次的聊天，我已经很明显能看出不一样了，我不相信你看不出来，我不是不相信你什么，而是你和她都有所改变了。她跟你说话有讽刺意味，却不再有之前的任何一句狠话，反而显得平静，你跟她说的话，真的像和一个朋友说的，能像平常聊天一样带着表情，带着情绪，说着似玩笑又不是玩笑的话，一切都显得那么和平。在那天晚上，你可能看到消息了，也可能没看到，她九点多的时候又给你发消息了，发了一张图片表情，这太能表示什么了，不是因为表情，而是因为在事情已经问完并且隔了一段时间之后，她还会给你发消息，还是多多少少带着情绪意味的表情。我知道，至少在她那里，她跟你已经缓和下来了，已经可以像重新认识一样聊天了。你呢？要论缓和关系，你能比她更快，只是她的态度让你无法多说什么而已。你当时的想法是什么呢？你觉得像这样就挺好的了，大概你觉得，不再针锋相对，能都冷静下来正常说话，很难得了。我说这句话的时候，没有生气，我只是无力罢了，这意味着，她能放着过去，能接受重新出现在你朋友圈，你呢，以你的原则，以你内心深处的一点愧疚，这大概就是你所认为的善终了吧。</p>
-<p>&#8195;&#8195;<strong>现</strong>在，我听到你的原则，多多少少还是觉得有那么一点讽刺，谁不是凡夫俗子，谁能完完全全照着自己所认为的准则来做事，无论因为什么都坚定不移？明明都有私心，为什么总是给自己找那么多做人道理的借口，你能抱着你的道理和朋友过一辈子吗？有的时候，我都觉得，你就是因为笃定我不会离开你，才会在抓得住我的同时，一次又一次心存侥幸地挑战我底线。说不定还觉得我就是小女生那种闹脾气，从来没有把我放在和自己平等的位置去重视我的想法、我的感受，可能也觉得我就是太过偏执，钻进了死胡同，才想不开，但是你有没有想过我每一次掉眼泪的表面下是一颗多么几近破碎的心。明明应该是同等地位的，应该是相互尊重相互爱护的，但是为什么，我的自私狭隘、你的圆滑容忍，就只是一次又一次地让我们互相伤害。</p>
-<p>&#8195;&#8195;<strong>我</strong>尝试着接受你和朋友的相处方式，接受你身边的异性朋友比同性朋友多，接受你和异性朋友玩得像家人。我曾经也很天真的以为，“宝贝”这个称呼只属于自己最爱的人，直到我听到你能叫所有人宝贝，我当时除了惊讶，并没有什么不开心，也很快就接受了，只是不再认为这个称呼只属于自己爱的人。在那时候，我想起来，我们还没在一起的那个冬天，一个学妹和你在网上聊天，你发语音过去的时候，也是很自然地在最后加上了一句宝贝。我也知道你叫我和叫其他人是不一样的，但终究不会再认为那是我的专属了。每个人都不一样，我无法左右你的思想不是吗？</p>
-<p>&#8195;&#8195;<strong>也</strong>许，我该学着改变自己了，让自己不再去介意那么多，让自己看得更开，不再想着你能为我做多少改变了，我已经改不了你了，我放弃了。前提是，她除外，这个人，已经不可能在我心里磨灭了，不是说在心里浪费一个位置去装一个无关紧要的人，而是，因为这个人，她带给我、你带给我以及我带给自己的伤害，是我无法释怀的。如果一下子说忘就忘了，我只会觉得我之前所有的生气与眼泪就像一个笑话。说我小气也好，自寻烦恼也罢，被钉子钉过的树木，钉子可以没了，但留下的伤痕一直都在，淡化，却不会消失。</p>
-<p>&#8195;&#8195;<strong>就</strong>这样吧，算了吧，不再寄希望于你，是我入戏太深，觉得自己能重要到改变你对待一些人的态度。想想我之前，还对大莫说，不要把自己看得太轻，也不要把别人心里的自己看得太重。我还是，太过自信了一些吧。我依然不怀疑你对我的爱，只是我该清楚，在你认为的正确面前，我不是一直最重要的。</p>
-<hr>
-<h1 id="生活还要继续，潘潘，我希望你能开开心心陪我走下去"><a href="#生活还要继续，潘潘，我希望你能开开心心陪我走下去" class="headerlink" title="生活还要继续，潘潘，我希望你能开开心心陪我走下去"></a><strong>生活还要继续，潘潘，我希望你能开开心心陪我走下去</strong></h1><p>&#8195;&#8195;<strong>当</strong>你说你要写一篇日志的时候，我还在想，你是不是要写秀恩爱的一篇文章，是啊，在我眼里，我觉得那件事情已经过去了，至少你不再生气了，不是吗?你难道非要我每次都猜测你笑容下，是真的开心，还是强装的嘛？我们有必要这样吗？不开心就提出来，即使我怎么哄，你不开心就表达出来。不要在我以为你不生气的时候，你却告诉我–“你知道吗，每次我生气难过，你都觉得几个小时就能好了，因为我笑了”。你这是告诉我，你一直在给我做假的表情嘛？真的不想这个样子，好吗？</p>
-<p>&#8195;&#8195;<strong>我</strong>也不知道自己是个什么样子的人，好人，坏人，暖男，渣男……不知道该怎么评论自己，我活成了自己都不知道的样子，但是我从来不会和最亲密的人，说心口不一的话，我笑了，就是因为我开心，我生气，就是因为惹到我了。我希望，你不要让我去猜好吗？我宁愿把更多的时间和你一起开开心心的度过。我是一个情商高的人，但我也是个傻子，我的情商高是表现在我与普通朋友交往的时候，我说每一句话之前都会认真考虑，别人做的每一个表情我都认真分析。但是这样太累了。我不想和谁都这样，在你身边，我就想像个傻子一样，开心就笑，不开心就哭，你笑了我就觉得你开心，你哭了，我就尽最大努力哄你。我不想把对别人的小心翼翼，再用在你身上，太累了。</p>
-<p>&#8195;&#8195;<strong>或</strong>许，我这样说，你会想，是不是你对我太好了，让我有点肆无忌惮，是啊，我是肆无忌惮，因为我从来没有觉得你会离开我，从来没有，但是我从来也没有想过因为你宠我，我就可以任意伤害你，可以不顾及你的感受。我很享受这一份爱情，我也想把它坚持下去，因为你为我付出太多了，多到我这辈子都还不完的程度。</p>
-<p>&#8195;&#8195;<strong>或</strong>者说，因为我太相信这份爱情了，我觉得没有什么是可以打败我们的，我不用像那些可怜的男孩子一样，每天想着怎么维护这段感情，是啊，感情是需要维护，可是，因为我们之间的感情太好了，让我产生了错觉，让我觉得，我们是坚不可摧的，现在看起来，是我错了，对不起，是我越来越忘记去维护它，潘潘，接下来，我会小心翼翼地维护我们的感情，让它更加坚固，更加持久。</p>
-<p>&#8195;&#8195;<strong>其</strong>实，因为在我的成长过程中，尤其是高中阶段的班长身份，让我必须和所有人都能聊得来，可以察觉到每个人的变化。我甚至不能只交那么几个好朋友，我需要和所有人成为朋友，我甚至不能对他人说狠话，因为我不能起坏的带头作用。所以，我变得特别圆滑，变得给自己留满退路，也变得让自己做任何事情都善始善终，性格使然，所以，我不会拒绝别人，我学会了与人交往的各种技能，却没有学会拒绝。</p>
-<p>&#8195;&#8195;<strong>有</strong>人说过，我们老是把最好的一面留给别人，而总是把最坏的一面留给最爱的人。这句话对我大概也算贴切，但是我不是给自己找借口，我会慢慢改掉自己的这个性格，变成一个更加成熟稳重的男孩，潘潘，希望你能作为我变化的见证人，好吗？</p>
-<p>&#8195;&#8195;<strong>潘潘</strong>对不起，是我伤害了你，我以后真的会认认真真的对待我们之间的感情，我从来没有想过敷衍，但只是没有那么特别认真，我爱你，真的不是说说而已，你知道嘛？你这次要把东西还给我的时候，我是真的生气了，因为在我眼里，还东西，就是等于离开，我不觉得你会离开我，而你却选择了最让我难受的方式，是啊，我是让你难受了，但是，我真的是一个特别注重仪式感的人，有些事情，只能在特定的情况下发生，而你，却让它发生在一个不该发生的时间，你是想表达你的失望，但是，我希望不要用这种让我绝望的方式，行吗？我真的很难受。</p>
-<p>&#8195;&#8195;<strong>好</strong>了，就这么多吧，我真的希望你能快点开心起来，我不想让这件事情，继续影响我们，也不希望你以后做出的表情和你内心的想法不一样，真的，在我这里，我希望你做最真的自己，人都有自己的伪装，但是，那不是展示给最爱你的人的。宝贝，我爱你，我真的好爱你！！</p>
-<hr>
-<h1 id="潘潘，我爱你"><a href="#潘潘，我爱你" class="headerlink" title="潘潘，我爱你"></a><strong>潘潘，我爱你</strong></h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/Written-to-us-for-200-days/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/JW.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,I'm here">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/Written-to-us-for-200-days/" itemprop="url">Written_to_us_for_200_days</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T07:57:07+08:00">
-                2018-09-10
-              </time>
+              <a href="/2018/10/20/a little uncomfortable/" rel="next" title="a little uncomfortable">
+                <i class="fa fa-chevron-left"></i> a little uncomfortable
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Essay/" itemprop="url" rel="index">
-                    <span itemprop="name">Essay</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/10/Written-to-us-for-200-days/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/09/10/Written-to-us-for-200-days/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="写给200天的我们"><a href="#写给200天的我们" class="headerlink" title="写给200天的我们"></a><strong>写给200天的我们</strong></h1><hr>
-<h2 id="时光飞逝，初心不改"><a href="#时光飞逝，初心不改" class="headerlink" title="时光飞逝，初心不改"></a>时光飞逝，初心不改</h2><h3 id="初印象"><a href="#初印象" class="headerlink" title="初印象"></a>初印象</h3><p>&emsp;&emsp;时光荏苒，转眼间来到了200天，从223到910，生活中的点点滴滴都在我脑子里，初识你的时候，觉得你是个Shy Girl，看你扭扭捏捏学板的样子，就想帮你，但是呢，作为学长，要有学长的矜持，不然会被认为动机不纯，然后就看着你，干着急，就一直对你说，小碎步动起来。</p>
-<h3 id="上帝给了我们机会，我们紧紧握住"><a href="#上帝给了我们机会，我们紧紧握住" class="headerlink" title="上帝给了我们机会，我们紧紧握住"></a>上帝给了我们机会，我们紧紧握住</h3><p>&emsp;&emsp;我们网络上的第一次交集，你说你是“闲的无聊”，真正的交集，是从红薯开始，每天一个红薯，在冬天，是最大的开心(也是最大的花销)，慢慢就成了习惯，每天一起学习，一起吃，一起吐槽陈之秀和戚尧威，一起回宿舍，两个人，成了亲密的伙伴。</p>
-<h3 id="那个假期，你我，跟随了自己的内心"><a href="#那个假期，你我，跟随了自己的内心" class="headerlink" title="那个假期，你我，跟随了自己的内心"></a>那个假期，你我，跟随了自己的内心</h3><p>&emsp;&emsp;回家的那天，很想你出来送送我，在你楼下一直看你宿舍，都没见你出来，也就自己走了，整个假期，和你每天都聊天，鬼知道为啥哦，可能是习惯了吧，第一次给你发恐怖图片把你吓哭了，也把我吓个半死，哇，零下二十几度的天气，我在床边，穿条内裤，瑟瑟发抖地打电话安慰你，那个感觉，贼刺激。我记得有一天你和我说，第二天和我开视频，我开心地要死，我第一次对开视频这么开心。有人说，养成一个习惯要有28天，可是每晚开视频的习惯，我只用了两天，第一次在家里，明目张胆的和女孩子开视频聊天。毕竟我的母亲大人，贼反感我和女孩子呆在一起!</p>
-<p>&emsp;&emsp;可是，该来的还是回来，2月10号晚上11点20分，我们突然开始了良心的拷问，你突然选择离开我，让我有点猝不及防，我好难受，但最终选择了自己的想法，于我而言，我舍不得你。你说当我动摇的时候，你觉得你有希望了，但是，动摇之后，我就坚定了自己的想法。自己的选择的路，就要自己无悔的走下去，而现在，我觉得我的选择是正确的。</p>
-<h3 id="新的学期，新的开始，也是新的征程"><a href="#新的学期，新的开始，也是新的征程" class="headerlink" title="新的学期，新的开始，也是新的征程"></a>新的学期，新的开始，也是新的征程</h3><p>&emsp;&emsp;我到车站接你，我给你手，让你牵我，你结果直接把箱子放我手上，哼！不过打车时候，你把手给我，我就知道，你是我的了，我要好好的对你。接下来，我带你各处浪，各种吃吃喝喝，然后就是开学，带你做了所有我想和女朋友做的事情，我超开心! 爱你哦！</p>
-<p>&emsp;&emsp;学期里面，我们一起起床跑步，一起吃饭，一起学习(这句话说的我心虚)，带你去吃螺蛳粉，带你去阿姨那边，生活中的点点滴滴都是你的身影，舍友都说一个学期没见我在宿舍呆过几天，每天六点半走，晚上十点回来，回来就睡觉，他们三的生活都没我了，哈哈哈哈</p>
-<p>&emsp;&emsp;转眼就是暑假，你可厉害了，我的女朋友不知道丢了几次，还吐槽你的男朋友丢了，哼！半斤八两，哇，整个假期，都在想你(我猜你不信)，终于等到你来，和你疯了一周(哎吆，我的腰啊！))，我觉得两个月的分离，值了！</p>
-<h3 id="生活总是有些磕磕绊绊，但是，我一直都在"><a href="#生活总是有些磕磕绊绊，但是，我一直都在" class="headerlink" title="生活总是有些磕磕绊绊，但是，我一直都在"></a>生活总是有些磕磕绊绊，但是，我一直都在</h3><p>&emsp;&emsp;生活，总是这样，开心久了，就会有些问题，而我们之间的问题，都是因为我的个人原因，你跟我在一起以后，让你受苦了。我不是个正儿八经的男孩子，以前的经历可以说很混，可以说就是一个“渣男”，有人说“爱上渣男，就是爱上了痛苦”。是啊，我让你哭了一次又一次，让你失望了一次又一次。我真的不想让你再哭了，我要好好的对你，不会再去做那些乱七八糟的事情了，我要好好努力，好好做一个模范男朋友，让你接下来的日子开开心心，I promise U</p>
-<h3 id="荒凉时光，你许我一世欢颜，我许你地老天荒"><a href="#荒凉时光，你许我一世欢颜，我许你地老天荒" class="headerlink" title="荒凉时光，你许我一世欢颜，我许你地老天荒"></a>荒凉时光，你许我一世欢颜，我许你地老天荒</h3><p>&emsp;&emsp;这是二百天的纪念，也只是开始，我们一起的日子还长，宝贝，我希望你可以陪我一起，携手走过接下来的日子，我已经习惯了你的存在，我爱你，不只是说说而已。</p>
-<hr>
-<h1 id="潘潘，200天快乐"><a href="#潘潘，200天快乐" class="headerlink" title="潘潘，200天快乐"></a>潘潘，200天快乐</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1085,799 +769,17 @@ db.executeSQL(String sql, Object[] bindArgs);
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bc78c67e8aa48bd" async="async"></script>
+</div>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/29/File_Transfer_between_Local_and_GitHub_based_on_GitBash/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/JW.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,I'm here">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/29/File_Transfer_between_Local_and_GitHub_based_on_GitBash/" itemprop="url">File_Transfer_between_Local_and_GitHub_based_on_GitBash</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T16:45:00+08:00">
-                2018-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/29/File_Transfer_between_Local_and_GitHub_based_on_GitBash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/29/File_Transfer_between_Local_and_GitHub_based_on_GitBash/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>使用GitHub越来越多了，那么，如何传递本地与仓库的数据就成了问题，学习了Git Bash命令行链接，在这里做一个小笔记</p>
-</blockquote>
-<h2 id="本地建仓"><a href="#本地建仓" class="headerlink" title="本地建仓"></a>本地建仓</h2><ul>
-<li>创建一个新的文件夹</li>
-<li>在文件夹里打开Git Bash <em>点击右键，选择Git Bash here</em></li>
-<li>输入命令：$<code>git init</code>  <em>这是初始化本地仓库</em>   </li>
-</ul>
-<h2 id="建立本地仓库与GitHub仓库关联"><a href="#建立本地仓库与GitHub仓库关联" class="headerlink" title="建立本地仓库与GitHub仓库关联"></a>建立本地仓库与GitHub仓库关联</h2><ul>
-<li>输入命令：$<code>git remote add origin <em>仓库链接</em></code> 比如：git remote add origin <a href="https://github.com/JarvisSmile/JarvisSmile.github.io.git" target="_blank" rel="noopener">https://github.com/JarvisSmile/JarvisSmile.github.io.git</a> </li>
-</ul>
-<h2 id="将GitHub仓库下载到本地"><a href="#将GitHub仓库下载到本地" class="headerlink" title="将GitHub仓库下载到本地"></a>将GitHub仓库下载到本地</h2><ul>
-<li>输入命令：$<code>git pull origin master</code></li>
-</ul>
-<h2 id="修改内容并提交commit"><a href="#修改内容并提交commit" class="headerlink" title="修改内容并提交commit"></a>修改内容并提交commit</h2><ul>
-<li>输入命令：$<code>git status</code></li>
-<li>输入命令：$<code>git add.</code></li>
-<li>输入命令：$<code>git status</code></li>
-<li>输入命令：$<code>git commit -m”<em>这里写你对修改的描述</em>“</code></li>
-<li>输入命令：$<code>git status</code></li>
-</ul>
-<h2 id="将本地修改上传到Github仓库"><a href="#将本地修改上传到Github仓库" class="headerlink" title="将本地修改上传到Github仓库"></a>将本地修改上传到Github仓库</h2><ul>
-<li>输入命令：$<code>git push origin master</code></li>
-</ul>
-<h2 id="登陆GitHub仓库，确认已修改"><a href="#登陆GitHub仓库，确认已修改" class="headerlink" title="登陆GitHub仓库，确认已修改"></a>登陆GitHub仓库，确认已修改</h2><hr>
-
-          
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/Building_github_personal_blog_based_on_HEXO/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/JW.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,I'm here">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/28/Building_github_personal_blog_based_on_HEXO/" itemprop="url">Building_github_personal_blog_based_on_HEXO</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T01:30:00+08:00">
-                2018-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/28/Building_github_personal_blog_based_on_HEXO/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/28/Building_github_personal_blog_based_on_HEXO/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h3 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h3><blockquote>
-<p><a href="https://hexo.io/" target="_blank" rel="noopener">HEXO</a> is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static fileswith a beautiful theme in seconds.</p>
-</blockquote>
-<p>&emsp;&emsp;作为一个正在成长的小coder，总喜欢搞一些事情，比如想着搭建一个自己的博客，来记录一些小笔记。用自己的服务器没搭出来，就借用了github的服务器，使用了现在大家使用频率较高的<strong>hexo+github</strong>来创建博客,而且hexo用户量大，主题还很多,对于比较注意表面的人，可以说很友好了。</p>
-<hr>
-<p>&emsp;&emsp;这篇文章是基于 <strong>Windows系统</strong> 对搭建过程做一个小的记录,虽然我的电脑已经提前将环境搭好了，但还是从零开始记录吧！</p>
-<hr>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><strong>安装NodeJs</strong></li>
-<li><strong>安装Git</strong></li>
-<li><strong>安装Hexo</strong></li>
-<li><strong>链接GitHub</strong></li>
-<li><strong>生成SSH并添加到GitHub</strong></li>
-<li><strong>部署项目</strong></li>
-<li><strong>本地测试</strong></li>
-<li><strong>上传到GitHub</strong></li>
-<li><strong>绑定个人域名</strong></li>
-<li><strong>修改及配置主题</strong></li>
-<li><strong>添加文章</strong></li>
-<li><strong>总结</strong></li>
-</ul>
-<hr>
-<h2 id="Ready-Go！"><a href="#Ready-Go！" class="headerlink" title="Ready~Go！"></a>Ready~Go！</h2><p><br></p>
-<h3 id="1-安装NodeJS"><a href="#1-安装NodeJS" class="headerlink" title="1.安装NodeJS"></a>1.安装NodeJS</h3><blockquote>
-<p>Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code server-side</p>
-</blockquote>
-<p>hexo是基于nodejs环境的静态博客，在接下来操作中，也会用到nodejs的npm安装。</p>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">点击进入NodeJS首页</a>（说明：LTS为长期支持版，Current为当前最新版）</p>
-<p><strong>安装步骤：</strong>  </p>
-<blockquote>
-<p>首先下载好msi文件后，双击打开安装，也是一路next，不过在Custom Setup这一步记得选 <code>Add to PATH</code> ,这样你就不用自己去配置电脑上环境变量了，装完在按 <code>win + r</code> 快捷键调出运行，然后输入cmd，点击确定，在cmd中输入path可以看到你的node是否配置在里面（环境变量），没有的话你就自由发挥吧。</p>
-</blockquote>
-<p><strong>查看node版本</strong></p>
-<p>&emsp;&emsp;在命令行输入：$<code>node -v</code></p>
-<h3 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h3><blockquote>
-<p>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</p>
-</blockquote>
-<p><a href="https://git-scm.com/" target="_blank" rel="noopener">点击进入Git首页</a></p>
-<ul>
-<li><a href="https://github.com/git-for-windows/git/releases/download/v2.16.2.windows.1/Git-2.16.2-32-bit.exe" target="_blank" rel="noopener">点击下载32-bit Git for Windows Setup</a></li>
-<li><a href="https://github.com/git-for-windows/git/releases/download/v2.16.2.windows.1/Git-2.16.2-64-bit.exe" target="_blank" rel="noopener">点击下载64-bit Git for Windows Setup</a></li>
-</ul>
-<p><strong>安装步骤</strong></p>
-<blockquote>
-<p>双击下载好的.exe文件，一直点Next就好</p>
-</blockquote>
-<p><strong>查看Git版本</strong></p>
-<p>&emsp;&emsp;打开Git Bash，输入命令：$<code>git version</code></p>
-<h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><blockquote>
-<p>Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static files with a beautiful theme in seconds.</p>
-</blockquote>
-<p>&emsp;<strong>安装步骤</strong></p>
-<ul>
-<li>&emsp;先创建一个文件夹（用来存放所有blog的东西），然后<code>cd</code>到该文件夹下.  </li>
-<li>&emsp;安装hexo命令：$<code>npm i -g hexo</code></li>
-<li>&emsp;安装完成后，查看版本 :$<code>hexo -v</code></li>
-<li>&emsp;初始化命令：$<code>hexo init</code>  </li>
-<li><p>&emsp;初始化完成之    后打开所在的文件夹可以看到一些文件</p>
-<p>  <strong>&emsp;这里要解释一下:</strong></p>
-<ul>
-<li>&emsp; node_modules：是依赖包<ul>
-<li>&emsp; public：存放的是生成的页面</li>
-<li>&emsp; scaffolds：命令生成文章等的模板</li>
-<li>&emsp; source：用命令创建的各种文章</li>
-<li>&emsp; themes：主题</li>
-<li>&emsp; _config.yml：整个博客的配置</li>
-<li>&emsp; db.json：source解析所得到的</li>
-<li>&emsp; package.json：项目所需模块项目的配置信息</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="前置工作就此告一段落，接下来开始具体配置"><a href="#前置工作就此告一段落，接下来开始具体配置" class="headerlink" title="前置工作就此告一段落，接下来开始具体配置"></a>前置工作就此告一段落，接下来开始具体配置</h4><hr>
-<h3 id="4-链接GitHub"><a href="#4-链接GitHub" class="headerlink" title="4.链接GitHub"></a>4.链接GitHub</h3><blockquote>
-<p>GitHub 是一个面向开源及私有 软件项目的托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。</p>
-</blockquote>
-<ul>
-<li><p>首先，你得有一个GitHub的账号————<em>如果你没有，赶紧创一个啊！</em></p>
-</li>
-<li><p>然后，你要创建一个新的repo，名称为<code><em>YourGitHubName</em>.github.io</code><strong>必须按照这个格式创建才有用</strong></p>
-</li>
-<li><p>最后，回到Git Bash里面配置GitHub账户信息,如下（YourName和YourEmail都替换成你自己的）：</p>
-<blockquote>
-<p>$<code> git config –global user.name “YourName”</code><br>$<code> git config –global user.email “YourEmail”</code></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="5-创建SSH并添加到GitHub中"><a href="#5-创建SSH并添加到GitHub中" class="headerlink" title="5.创建SSH并添加到GitHub中"></a>5.创建SSH并添加到GitHub中</h3><h4 id="（1）创建SSH"><a href="#（1）创建SSH" class="headerlink" title="（1）创建SSH"></a>（1）创建SSH</h4><ul>
-<li>·在Git Bash中输入：$<code>ssh-keygen -t rsa -C “<a href="mailto:YourEmail@example.com" target="_blank" rel="noopener">YourEmail@example.com</a>“</code>,生成ssh</li>
-<li>·在Git Bash中输入: $<code>cd ~/.ssh</code></li>
-<li>·在Git Bash中输入：$<code>cat id_ras.pub</code></li>
-<li>·你会在Git Bash中看到：<br><code>ssh-ras<em>这会有一段字符</em><a href="mailto:YourEmail@example.com" target="_blank" rel="noopener">YourEmail@example.com</a></code>这个样子的字符</li>
-</ul>
-<h4 id="（2）添加到GitHub"><a href="#（2）添加到GitHub" class="headerlink" title="（2）添加到GitHub"></a>（2）添加到GitHub</h4><ul>
-<li>·将上面获取到的SSH(ssh-ras和那一段字符，邮箱不要)到GitHub中————添加一个<code>New SSH key</code> ，title随便取，key就填刚刚那一段。</li>
-<li>·在Git Bash中验证是否添加成功:$<code>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></code></li>
-</ul>
-<h3 id="6-部署项目"><a href="#6-部署项目" class="headerlink" title="6.部署项目"></a>6.部署项目</h3><ul>
-<li>打开blog所在文件夹，修改<code>_config.yml</code>文件的一些配置,(冒号之后都是有一个半角空格的)：<blockquote>
-<p>deploy:<br>  &emsp;type: git<br>  &emsp;repo:<a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourgithubName/YourgithubName.github.io.git</a> <em>如果出现无法连接，可以修改为ssh:<a href="mailto://git@github.com" target="_blank" rel="noopener">//git@github.com</a>/YourgithubName/YourgithubName.github.io</em><br>  &emsp;branch: master</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="7-本地测试"><a href="#7-本地测试" class="headerlink" title="7.本地测试"></a>7.本地测试</h3><ul>
-<li><p>打开Git Bash 进入到blog目录，分别执行以下命令：</p>
-<ul>
-<li>$<code>hexo init</code></li>
-<li>$<code>hexo generate</code></li>
-<li>$<code>hexo server</code></li>
-<li>_注：hexo 3.0把服务器独立成个别模块，需要单独安装：$<code>npm i hexo-server</code>。</li>
-</ul>
-</li>
-<li>打开浏览器，在地址栏输入：<code><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></code>，你就会看到Hexo默认界面了 </li>
-</ul>
-<h3 id="8-上传到GitHub"><a href="#8-上传到GitHub" class="headerlink" title="8.上传到GitHub"></a>8.上传到GitHub</h3><ul>
-<li>首先，安装一个小玩意，在Git Bash中输入：$<code>npm install hexo-deployer-git –save</code>(只有用它才能将文章部署到GitHub服务器，并且能被别人访问到)</li>
-<li>接下来在Git Bash输入命令(建议每次都按以下三步进行)：<ul>
-<li>$<code>hexo clean</code></li>
-<li>$<code>hexo generate</code></li>
-<li>$<code>hexo deploy</code></li>
-<li><em>注：deploy过程中可能需要输入你的UserName和PassWord</em></li>
-</ul>
-</li>
-<li>部署成功后，稍等一会，在自己浏览器输入<code>http://<em>YourGitHubName</em>.github.io</code>就可以看到你的个人博客啦!</li>
-</ul>
-<hr>
-<p><strong>基本操作已经完成，接下来都是附加操作~</strong></p>
-<hr>
-<h3 id="9-绑定个人域名"><a href="#9-绑定个人域名" class="headerlink" title="9.绑定个人域名"></a>9.绑定个人域名</h3><blockquote>
-<p>有自己的博客，怎么能不配备一个自己喜欢的域名呢。</p>
-</blockquote>
-<ul>
-<li><p>首先，需要购买一个域名，比如我在阿里云购买的<a href="//www.jarvissmile.top">jarvissmile.top</a>,DNS也是顺便在阿里云购买的，个人也比较支持阿里云！</p>
-</li>
-<li><p>然后，在DNS解析中，增加一条记录</p>
-<blockquote>
-<p>记录类型为 <strong>A</strong><br>主机记录为<strong>www</strong>或者<strong> @ </strong><br>记录值为你GitHub的ip<br><em>注：关于GitHub的IP地址，你可以打开CMD，输入：$<code>ping <strong>YourGitHubName</strong>.github.io</code></em></p>
-</blockquote>
-</li>
-<li><p>接下来，添加CNAME，在项目的source文件夹下面创建一个CNAME的文件，在里面添加自己的域名，比如<a href="//www.jarvissmile.top">jarvissmile.top</a><em>注：只能添加一个</em></p>
-</li>
-<li><p>再次部署，重复步骤8，然后在浏览器输入你的域名，就可以看到你的博客了~</p>
-</li>
-</ul>
-<h3 id="10-修改及配置主题"><a href="#10-修改及配置主题" class="headerlink" title="10.修改及配置主题"></a>10.修改及配置主题</h3><p>&emsp;Hexo初始化之后默认的主题是<code>landscape</code> , 然后你可以去<a href="href=&quot;https://hexo.io/themes/&quot;">Hexo.io</a>里面找到你想要的主题。在github中搜索你要的主题名称，里面都会有该主题的如何使用的介绍，按着来就好了，反正就是改改改！我选的是<code><a href="href=&quot;https://github.com/Haojen/hexo-theme-Claudia&quot;">Claudia</a></code>,看起来挺不错，至少是我喜欢的类型。<br>&emsp;跟主题相关的配置在<code>themes/Claudia/_config.yml</code>里面，每一个主题，应该都有<code>Readme.md</code>文档,可以参考，并对主题进行修改！</p>
-<h3 id="11-添加文章"><a href="#11-添加文章" class="headerlink" title="11.添加文章"></a>11.添加文章</h3><ul>
-<li><p>新建文章：$<code>hexo new ‘文章名’</code>，然后你就可以在<code>source/_posts</code>路径下看到你创建的文章啦，编辑完成之后按照前面说的方式部署，在浏览器刷新就能看到你的文章了。</p>
-</li>
-<li><p>关于具体的文章编辑你可以看下<a href="&quot;https://hexo.io/zh-cn/docs/writing.html&quot;">官网介绍</a></p>
-</li>
-<li>至于markdown，可以自行发挥啦~，推荐语法学习博客:<a href="https://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="noopener">Markdown——入门指南</a></li>
-</ul>
-<hr>
-<p><strong>附加操作也就到此结束</strong></p>
-<hr>
-<h3 id="12-总结"><a href="#12-总结" class="headerlink" title="12.总结"></a>12.总结</h3><ul>
-<li>也没啥想说的，就是觉得结尾很突兀，就加点东西</li>
-<li>不管怎么做，都要一步一步来，慢慢就会学会</li>
-<li>markdown，真的好用</li>
-</ul>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/JW.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,I'm here">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/01/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-01T00:00:01+08:00">
-                2018-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/01/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/01/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/01/Hello/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/JW.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,I'm here">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/01/Hello/" itemprop="url">Hello</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-01T00:00:00+08:00">
-                2018-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hello/" itemprop="url" rel="index">
-                    <span itemprop="name">Hello</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/01/Hello/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/01/Hello/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>Welcome to my space;</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1885,6 +787,15 @@ db.executeSQL(String sql, Object[] bindArgs);
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1905,8 +816,17 @@ db.executeSQL(String sql, Object[] bindArgs);
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -2032,6 +952,22 @@ db.executeSQL(String sql, Object[] bindArgs);
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android：SQLiteOpenHelper类"><span class="nav-number">1.</span> <span class="nav-text">Android：SQLiteOpenHelper类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导语"><span class="nav-number">1.1.</span> <span class="nav-text">导语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.2.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let’s-learn-simple-SQLite-technology"><span class="nav-number">1.3.</span> <span class="nav-text">Let’s learn simple SQLite technology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLite介绍"><span class="nav-number">1.4.</span> <span class="nav-text">SQLite介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLiteOpenHelper类介绍"><span class="nav-number">1.5.</span> <span class="nav-text">SQLiteOpenHelper类介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法详细介绍-通过具体操作来介绍"><span class="nav-number">1.6.</span> <span class="nav-text">常用方法详细介绍(通过具体操作来介绍)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQLiteOpenHelper子类的构造函数"><span class="nav-number">1.6.1.</span> <span class="nav-text">SQLiteOpenHelper子类的构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.6.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭数据库"><span class="nav-number">1.6.3.</span> <span class="nav-text">关闭数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新数据库"><span class="nav-number">1.6.4.</span> <span class="nav-text">更新数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据库"><span class="nav-number">1.6.5.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数据"><span class="nav-number">1.6.6.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据"><span class="nav-number">1.6.7.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据"><span class="nav-number">1.6.8.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">1.6.9.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询结果提取"><span class="nav-number">1.6.10.</span> <span class="nav-text">查询结果提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于executeSQL-的使用"><span class="nav-number">1.6.11.</span> <span class="nav-text">关于executeSQL()的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例代码-lt-单击下载Demo"><span class="nav-number">1.7.</span> <span class="nav-text">实例代码 &lt;=单击下载Demo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主界面代码"><span class="nav-number">1.7.1.</span> <span class="nav-text">主界面代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MainActiviry-java"><span class="nav-number">1.7.2.</span> <span class="nav-text">MainActiviry.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQLiteOpenHelper-java"><span class="nav-number">1.7.3.</span> <span class="nav-text">MySQLiteOpenHelper.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-xml"><span class="nav-number">1.7.4.</span> <span class="nav-text">string.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">1.7.5.</span> <span class="nav-text">运行结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.8.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JARVIS-冲鸭！"><span class="nav-number">2.</span> <span class="nav-text">JARVIS 冲鸭！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -2179,6 +1115,10 @@ db.executeSQL(String sql, Object[] bindArgs);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -2202,6 +1142,8 @@ db.executeSQL(String sql, Object[] bindArgs);
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100025, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 100025, xid: "2018/10/24/Android-SQLite/"});
 		
 
 		(function() {
